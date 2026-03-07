@@ -85,6 +85,108 @@ border-radius:10px;
 <h2 id="wa">わ</h2>
 <img src="wa1.jpg">
 
+<h1>Data Lansia</h1>
+
+<a href="a.html">あ</a>
+<a href="ka.html">か</a>
+<a href="sa.html">さ</a>
+<a href="ta.html">た</a>
+<a href="na.html">な</a>
+
+<br><br>
+
+<a href="ha.html">は</a>
+<a href="ma.html">ま</a>
+<a href="ya.html">や</a>
+<a href="ra.html">ら</a>
+<a href="wa.html">わ</a>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Kelompok あ</title>
+
+<style>
+
+body{
+text-align:center;
+font-family:Arial;
+}
+
+img{
+width:350px;
+margin-top:20px;
+border-radius:10px;
+}
+
+button{
+padding:10px 20px;
+margin:20px;
+font-size:18px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Kelompok あ</h1>
+
+<img id="foto">
+
+<br>
+
+<button onclick="prev()">Back</button>
+<button onclick="next()">Next</button>
+
+<script>
+
+let data=[
+"a1.jpg",
+"a2.jpg",
+"a3.jpg",
+"a4.jpg"
+]
+
+let index=0
+
+function tampil(){
+document.getElementById("foto").src=data[index]
+}
+
+function next(){
+
+index++
+
+if(index>=data.length){
+index=0
+}
+
+tampil()
+
+}
+
+function prev(){
+
+index--
+
+if(index<0){
+index=data.length-1
+}
+
+tampil()
+
+}
+
+tampil()
+
+</script>
+
+</body>
+</html>
 </body>
 
 </html>
