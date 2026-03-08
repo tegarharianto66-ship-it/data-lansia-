@@ -12,20 +12,22 @@ font-family:Arial;
 text-align:center;
 }
 
-.menu{
+.menu button{
 font-size:30px;
-margin:20px;
-}
-
-.menu a{
 margin:10px;
-text-decoration:none;
+padding:10px 20px;
 }
 
 img{
-width:250px;
-margin:10px;
+width:350px;
+margin-top:20px;
 border-radius:10px;
+}
+
+button.nav{
+margin:20px;
+padding:10px 20px;
+font-size:18px;
 }
 
 </style>
@@ -38,123 +40,61 @@ border-radius:10px;
 
 <div class="menu">
 
-<a href="#a">あ</a>
-<a href="#ka">か</a>
-<a href="#sa">さ</a>
-<a href="#ta">た</a>
-<a href="#na">な</a>
+<button onclick="pilih('a')">あ</button>
+<button onclick="pilih('ka')">か</button>
+<button onclick="pilih('sa')">さ</button>
+<button onclick="pilih('ta')">た</button>
+<button onclick="pilih('na')">な</button>
 
 <br><br>
 
-<a href="#ha">は</a>
-<a href="#ma">ま</a>
-<a href="#ya">や</a>
-<a href="#ra">ら</a>
-<a href="#wa">わ</a>
+<button onclick="pilih('ha')">は</button>
+<button onclick="pilih('ma')">ま</button>
+<button onclick="pilih('ya')">や</button>
+<button onclick="pilih('ra')">ら</button>
+<button onclick="pilih('wa')">わ</button>
 
 </div>
 
-<h2 id="a">あ</h2>
-<img src="a1.jpg">
-<img src="a2.jpg">
-
-<h2 id="ka">か</h2>
-<img src="ka1.jpg">
-
-<h2 id="sa">さ</h2>
-<img src="sa1.jpg">
-
-<h2 id="ta">た</h2>
-<img src="ta1.jpg">
-
-<h2 id="na">な</h2>
-<img src="na1.jpg">
-
-<h2 id="ha">は</h2>
-<img src="ha1.jpg">
-
-<h2 id="ma">ま</h2>
-<img src="ma1.jpg">
-
-<h2 id="ya">や</h2>
-<img src="ya1.jpg">
-
-<h2 id="ra">ら</h2>
-<img src="ra1.jpg">
-
-<h2 id="wa">わ</h2>
-<img src="wa1.jpg">
-
-<h1>Data Lansia</h1>
-
-<a href="a.html">あ</a>
-<a href="ka.html">か</a>
-<a href="sa.html">さ</a>
-<a href="ta.html">た</a>
-<a href="na.html">な</a>
-
-<br><br>
-
-<a href="ha.html">は</a>
-<a href="ma.html">ま</a>
-<a href="ya.html">や</a>
-<a href="ra.html">ら</a>
-<a href="wa.html">わ</a>
-
-<!DOCTYPE html>
-<html>
-
-<head>
-
-<title>Kelompok あ</title>
-
-<style>
-
-body{
-text-align:center;
-font-family:Arial;
-}
-
-img{
-width:350px;
-margin-top:20px;
-border-radius:10px;
-}
-
-button{
-padding:10px 20px;
-margin:20px;
-font-size:18px;
-}
-
-</style>
-
-</head>
-
-<body>
-
-<h1>Kelompok あ</h1>
+<br>
 
 <img id="foto">
 
 <br>
 
-<button onclick="prev()">Back</button>
-<button onclick="next()">Next</button>
+<button class="nav" onclick="prev()">Back</button>
+<button class="nav" onclick="next()">Next</button>
 
 <script>
 
-let data=[
-"a1.jpg",
-"a2.jpg",
-"a3.jpg",
-"a4.jpg"
-]
+let kelompok={
+a:["a1.jpg","a2.jpg","a3.jpg"],
+ka:["ka1.jpg","ka2.jpg"],
+sa:["sa1.jpg"],
+ta:["ta1.jpg"],
+na:["na1.jpg"],
+ha:["ha1.jpg"],
+ma:["ma1.jpg"],
+ya:["ya1.jpg"],
+ra:["ra1.jpg"],
+wa:["wa1.jpg"]
+}
 
+let data=[]
 let index=0
 
+function pilih(huruf){
+
+data=kelompok[huruf]
+index=0
+tampil()
+
+}
+
 function tampil(){
+
 document.getElementById("foto").src=data[index]
+
 }
 
 function next(){
@@ -181,12 +121,8 @@ tampil()
 
 }
 
-tampil()
-
 </script>
 
-</body>
-</html>
 </body>
 
 </html>
